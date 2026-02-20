@@ -32,4 +32,4 @@ Dockerfile
 .dockerignore
 
 # VSCode settings
-/.vscode/
+.vscode/
