@@ -15,8 +15,6 @@ ubuntu-*-cloudimg-console.log
 /.tmp/
 /output/
 /cache/
-/*userpatches*/
-/userpatches
 
 ### General annoyances ###
 .DS_Store
@@ -33,3 +31,14 @@ Dockerfile
 
 # VSCode settings
 .vscode/
+
+# Ignore the entire userpatches directory.
+/userpatches/*
+
+# Allow the userpatches directory itself
+!/userpatches/
+
+# OpenHamClock specific patches.
+!/userpatches/customize-image.sh
+!/userpatches/config-bpim4zero-openhamclock.conf
+!/userpatches/overlay/

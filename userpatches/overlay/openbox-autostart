@@ -1,0 +1,25 @@
+# Disable screen blanking and DPMS
+xset -dpms
+xset s noblank
+xset s off
+
+# Hide idle mouse cursor
+unclutter -idle 0.1 -root &
+
+# Clean stale Chromium crash flags from last session
+sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' \
+    /root/.config/chromium/Default/Preferences 2>/dev/null || true
+sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/' \
+    /root/.config/chromium/Default/Preferences 2>/dev/null || true
+
+# Launch Chromium — remove --kiosk for normal windowed mode
+chromium \
+    --no-sandbox \
+    --no-first-run \
+    --disable-infobars \
+    --disable-session-crashed-bubble \
+    --disable-restore-session-state \
+    --disable-translate \
+    --disable-features=TranslateUI \
+    --kiosk \
+    "http://192.168.1.130:3000" &
