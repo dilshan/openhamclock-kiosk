@@ -26,8 +26,8 @@ For a smooth build process, we recommend using a Linux environment (the prototyp
 ### 1. Clone the Repository
 
 ```bash
-git  clone  https://github.com/dilshan/openhamclock-kiosk.git
-cd  openhamclock-kiosk
+git clone https://github.com/dilshan/openhamclock-kiosk.git
+cd openhamclock-kiosk
 ```
 
 ### 2. Configuration
@@ -50,7 +50,7 @@ Example:  `ln -sf /usr/share/zoneinfo/Asia/Colombo /etc/localtime`
 
 Execute the compile script:
 ```bash
-./compile.sh  bpim4zero-openhamclock
+./compile.sh bpim4zero-openhamclock
 ```
 
 > **IMPORTANT**
@@ -63,7 +63,7 @@ Execute the compile script:
 
 Once the build finishes, navigate to the output directory:
 ```bash
-cd  output/images
+cd output/images
 ```
 
 ### 5. Write to SD Card
@@ -75,7 +75,7 @@ Insert a 4GB or 8GB SD card into your build PC. Identify its device path (e.g., 
 > This will permanently delete all data on the SD card. Ensure `of=/dev/sdX` points to the correct drive.
 
 ```bash
-sudo  dd  if=Armbian-unofficial_26.02.0-trunk_Bananapim4zero_trixie_current_6.12.73_minimal.img  of=/dev/sdX  bs=1M  status=progress  conv=fsync
+sudo dd if=Armbian-unofficial_26.02.0-trunk_Bananapim4zero_trixie_current_X.XX.XX_minimal.img of=/dev/sdX bs=1M status=progress conv=fsync
 ```
 
 ### 6. Boot
