@@ -54,6 +54,7 @@ Execute the compile script:
 ```
 
 > **IMPORTANT**
+> 
 > During the process, the *Linux kernel menuconfig* interface will appear. We highly recommend keeping all settings at their default values. An active internet connection is required throughout the build.
 
 ## Flashing the Image
@@ -70,6 +71,7 @@ cd  output/images
 Insert a 4GB or 8GB SD card into your build PC. Identify its device path (e.g., `/dev/sdX`) and run the following command.
 
 > **WARNING**
+> 
 > This will permanently delete all data on the SD card. Ensure `of=/dev/sdX` points to the correct drive.
 
 ```bash
