@@ -3,7 +3,7 @@
 
 A customized, Armbian-based Linux system designed to launch [*OpenHamClock*](https://github.com/accius/openhamclock) in a dedicated kiosk mode on the [Banana Pi Zero M4 Zero](https://docs.banana-pi.org/en/BPI-M4_Zero/BananaPi_BPI-M4_Zero).
 
-This image is built on the X Window System using the Openbox window manager and Chromium. It is engineered for a "plug-and-play" experience—once flashed, it requires no user interaction, keyboard, or mouse to function. WiFi and system localization are pre-configured at build time for seamless deployment.
+This image is built on the X Window System using the Openbox window manager and Chromium. It is engineered for a "plug-and-play" experience - once flashed, it requires no user interaction, keyboard, or mouse to function. WiFi and system localization are pre-configured at build time for seamless deployment.
 
 
 ## Prerequisites
