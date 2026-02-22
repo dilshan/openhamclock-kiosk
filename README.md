@@ -43,6 +43,7 @@ Example:  `ln -sf /usr/share/zoneinfo/Asia/Colombo /etc/localtime`
 	```bash
 	openssl  passwd  -6  "YOUR_NEW_PASSWORD"
 	```
+*  **Server URL:** Update the `userpatches/overlay/openbox-autostart` file. The default URL is set to `http://192.168.1.130:3000`. 
 
 * **Further Customizations**: For any additional system tweaks, please consult the [Armbian documentation](https://docs.armbian.com/).
 
