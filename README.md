@@ -1,6 +1,6 @@
 # OpenHamClock Kiosk
 
-A customized, Armbian-based Linux system designed to launch [*OpenHamClock*](https://github.com/accius/openhamclock) in a dedicated kiosk mode on the [Banana Pi Zero M4 Zero](https://docs.banana-pi.org/en/BPI-M4_Zero/BananaPi_BPI-M4_Zero).
+A customized, Armbian-based Linux system designed to launch [*OpenHamClock*](https://github.com/accius/openhamclock) in a dedicated kiosk mode on the [Banana Pi M4 Zero](https://docs.banana-pi.org/en/BPI-M4_Zero/BananaPi_BPI-M4_Zero).
 
 ![Prototype build of OpenHamClock Kiosk](https://raw.githubusercontent.com/dilshan/openhamclock-kiosk/refs/heads/main/openhamclock-kiosk.png)
 
