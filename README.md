@@ -82,4 +82,25 @@ sudo dd if=Armbian-unofficial_26.02.0-trunk_Bananapim4zero_trixie_current_X.XX.X
 
 ### 6. Boot
 
-Unmount the SD card, insert it into your Banana Pi Zero M4 Zero, and power it on. The system will automatically boot into OpenHamClock.
+Unmount the SD card, insert it into your Banana Pi M4 Zero, and power it on. The system will automatically boot into OpenHamClock.
+
+## Flashing the OS Image to Built-in eMMC
+
+The 2GB RAM version of the Banana Pi M4 Zero features 8GB of onboard eMMC, which provides more than enough space to host the OpenHamClock kiosk operating system. To flash the image to the internal storage, follow the steps below:
+
+1. Download the Banana Pi M4 Zero Desktop OS image from the [Armbian website](https://www.armbian.com/bananapi-m4-zero/), specifically recommending the Debian image with the Cinnamon desktop environment.
+2. Flash this initial OS image onto an SD card using the `dd` command, ensuring you target the correct drive (e.g., `/dev/sdb`).
+```bash
+sudo dd if=./Armbian_25.8.1_Bananapim4zero_trixie_current_6.12.35_cinnamon_desktop.img of=/dev/sdb bs=1M status=progress conv=fsync
+```
+3. Insert the SD card into the Banana Pi M4 Zero and boot the board, **making sure to configure the Wi-Fi connection** during the initial setup process.
+4. Once the board is booted and connected to your network, find its IP address by running the `ip addr` command.
+5. From your host machine, transfer the OpenHamClock kiosk operating system image to the Banana Pi using the `scp` command.
+```bash
+scp ./Armbian-unofficial_26.02.0-trunk_Bananapim4zero_trixie_current_6.12.73_minimal.img user@192.168.1.118:~/
+```
+6. Identify the eMMC device mapping on the Banana Pi using the `lsblk` command, noting that the internal disk will appear without mount points (typically as `mmcblk2`).
+7. Flash the OpenHamClock image directly into the internal eMMC using the `dd` command.
+8. After the transfer is complete, safely power down the board by running `sudo shutdown now`.
+9. Eject the SD card from the slot to ensure the board boots from internal storage on the next cycle.
+10. Power the board back on, and the OpenHamClock kiosk OS will start automatically from the built-in eMMC.
