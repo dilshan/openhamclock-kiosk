@@ -97,10 +97,13 @@ sudo dd if=./Armbian_25.8.1_Bananapim4zero_trixie_current_6.12.35_cinnamon_deskt
 4. Once the board is booted and connected to your network, find its IP address by running the `ip addr` command.
 5. From your host machine, transfer the OpenHamClock kiosk operating system image to the Banana Pi using the `scp` command.
 ```bash
-scp ./Armbian-unofficial_26.02.0-trunk_Bananapim4zero_trixie_current_6.12.73_minimal.img user@192.168.1.118:~/
+scp ./Armbian-unofficial_26.02.0-trunk_Bananapim4zero_trixie_current_6.12.73_minimal.img <USERNAME>@<BOARD-IP-ADDRESS>:~/
 ```
 6. Identify the eMMC device mapping on the Banana Pi using the `lsblk` command, noting that the internal disk will appear without mount points (typically as `mmcblk2`).
 7. Flash the OpenHamClock image directly into the internal eMMC using the `dd` command.
-8. After the transfer is complete, safely power down the board by running `sudo shutdown now`.
-9. Eject the SD card from the slot to ensure the board boots from internal storage on the next cycle.
-10. Power the board back on, and the OpenHamClock kiosk OS will start automatically from the built-in eMMC.
+```bash
+sudo dd if=./Armbian-unofficial_26.02.0-trunk_Bananapim4zero_trixie_current_6.12.73_minimal.img of=/dev/mmcblk2 bs=1M status=progress conv=fsync
+```
+9. After the transfer is complete, safely power down the board by running `sudo shutdown now`.
+10. Eject the SD card from the slot to ensure the board boots from internal storage on the next cycle.
+11. Power the board back on, and the OpenHamClock kiosk OS will start automatically from the built-in eMMC.
